@@ -21,14 +21,15 @@ public class Button : MonoBehaviour {
 
 	bool isTouching()
 	{
-		RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.up * myDistance);
-		Debug.DrawRay (transform.position, Vector2.up * myDistance);
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.up * myDistance);
+			Debug.DrawRay (transform.position, Vector2.up * myDistance);
 		
-		if (hit.collider != null) {
-			if (hit.collider.tag == "Note") {
-				return true;
+			if (hit.collider != null) {
+				if (hit.collider.tag == "Note") {
+					Destroy (hit.collider.gameObject);
+					return true;
+				}
 			}
-		}
 		return false;
 	}
 //	void OnCollisionStay2D(Collision2D col)
