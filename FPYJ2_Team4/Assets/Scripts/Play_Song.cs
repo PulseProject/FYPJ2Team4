@@ -7,17 +7,23 @@ public class Play_Song : MonoBehaviour
 	public GameObject Blue;
 	public GameObject Yellow;
 	public GameObject Green;
-	
+
+
 	public int part = 0;
 	// Use this for initialization
 	void Start () 
 	{
+
 		InvokeRepeating ("SongStart", 2, 1);
 		//if (part <= 1) {
 		//SongStart ();
 		
 		//	return;
 		//}
+	}
+	void Update()
+	{
+
 	}
 	IEnumerator NoteDelay()
 	{
@@ -33,7 +39,11 @@ public class Play_Song : MonoBehaviour
 		
 		
 		part += 1;
-		Debug.Log ("Part: " + part);
+		//Debug.Log ("Part: " + part);
 		
 	}
+
+
+
+
 }

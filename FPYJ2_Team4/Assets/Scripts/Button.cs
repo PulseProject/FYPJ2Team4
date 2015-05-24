@@ -1,42 +1,50 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//With Collider but without RigidBody since its static
 public class Button : MonoBehaviour {
-    public int whatbutton = 0;
+
+
 	// Use this for initialization
-	void Start () {
 	
+	public bool touching = false;
+	public float myDistance;
+	void Start () {
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	    if(Input.GetButtonDown("1"))
-        {
-            if(whatbutton == 1)
-            {
-                //Red Button
-            }
-        }
-        if (Input.GetButtonDown("2"))
-        {
-            if (whatbutton == 2)
-            {
-                //Blue Button
-            }
-        }
-        if (Input.GetButtonDown("3"))
-        {
-            if (whatbutton == 3)
-            {
-                //Green Button
-            }
-        }
-        if (Input.GetButtonDown("4"))
-        {
-            if (whatbutton == 4)
-            {
-                //Yellow Button
-            }
-        }
+		Debug.Log ("isTouching: " + isTouching());
 	}
+
+
+	bool isTouching()
+	{
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.up * myDistance);
+		Debug.DrawRay (transform.position, Vector2.up * myDistance);
+		
+		if (hit.collider != null) {
+			if (hit.collider.tag == "Note") {
+				return true;
+			}
+		}
+		return false;
+	}
+//	void OnCollisionStay2D(Collision2D col)
+//	{
+//		if (col.gameObject.tag == "Note") {
+//			NoteButtonColliding = true;
+//			Debug.Log("Colliding: " + NoteButtonColliding);
+//		}
+//	}
+//
+//	void OnCollisionExit2D(Collision2D col)
+//	{
+//		if (col.gameObject.tag == "Note") {
+//			NoteButtonColliding = false;
+//			Debug.Log("Colliding: " + NoteButtonColliding);
+//		}
+//	}
+	
 }
