@@ -23,13 +23,17 @@ public class Button : MonoBehaviour {
 	{
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.up * myDistance);
 			Debug.DrawRay (transform.position, Vector2.up * myDistance);
-		
+			if (Input.GetMouseButtonDown (0)) {
 			if (hit.collider != null) {
 				if (hit.collider.tag == "Note") {
 					Destroy (hit.collider.gameObject);
 					return true;
 				}
 			}
+			else{
+				return false;
+			}
+		}
 		return false;
 	}
 //	void OnCollisionStay2D(Collision2D col)
