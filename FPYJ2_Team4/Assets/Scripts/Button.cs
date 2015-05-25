@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 //With Collider but without RigidBody since its static
 public class Button : MonoBehaviour {
 
 
 	// Use this for initialization
-	
 	public bool touching = false;
+	public int combo;
+	public Text ComboCounter;
 	public float myDistance;
 	void Start () {
-
+		combo = 0;
+		ComboCounter.text = ""+combo;
 	}
 	
 	// Update is called once per frame
@@ -26,6 +28,8 @@ public class Button : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0)) {
 			if (hit.collider != null) {
 				if (hit.collider.tag == "Note") {
+					++combo;
+					ComboCounter.text = ""+combo;
 					Destroy (hit.collider.gameObject);
 					return true;
 				}

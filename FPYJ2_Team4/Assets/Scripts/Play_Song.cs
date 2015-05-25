@@ -34,7 +34,7 @@ public class Play_Song : MonoBehaviour
 	void SongStart () 
 	{
 		StartCoroutine(NoteDelay());
-		Instantiate(RedNote, new Vector3 (-1.5f, 5.0f, 0), Quaternion.identity);
+		Instantiate(RedNote, new Vector3 (8.0f, -2.0f, 0), Quaternion.identity);
 		StartCoroutine(NoteDelay());
 		
 		
