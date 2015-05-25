@@ -9,10 +9,14 @@ public class Button : MonoBehaviour {
 	public bool touching = false;
 	public int combo;
 	public Text ComboCounter;
+	public int score;
+	public Text ScoreCounter;
 	public float myDistance;
 	void Start () {
 		combo = 0;
 		ComboCounter.text = ""+combo;
+		score = 0;
+		ScoreCounter.text = "SCORE: "+score;
 	}
 	
 	// Update is called once per frame
@@ -30,6 +34,8 @@ public class Button : MonoBehaviour {
 				if (hit.collider.tag == "Note") {
 					++combo;
 					ComboCounter.text = ""+combo;
+					score += Random.Range(8,12);
+					ScoreCounter.text = "SCORE: "+score;
 					Destroy (hit.collider.gameObject);
 					return true;
 				}
