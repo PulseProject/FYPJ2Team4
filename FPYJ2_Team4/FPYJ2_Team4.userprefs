@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 <<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Play_Song.cs">
@@ -13,6 +14,12 @@
       <File FileName="Assets\Scripts\Play_Song.cs" Line="9" Column="26" />
       <File FileName="Assets\Scripts\Button.cs" Line="19" Column="39" />
 >>>>>>> 21b9c01bb1d8195c5d4e4842ff6e566b24f6556e
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Note.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Note.cs" Line="2" Column="26" />
+>>>>>>> parent of 281e27f... Done List:
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
