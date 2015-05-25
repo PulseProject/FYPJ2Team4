@@ -14,7 +14,7 @@ public class Play_Song : MonoBehaviour
 	void Start () 
 	{
 
-		InvokeRepeating ("SongStart", 2, 1);
+		InvokeRepeating ("SongStart", 1, 0.857f);
 		//if (part <= 1) {
 		//SongStart ();
 		
@@ -28,14 +28,14 @@ public class Play_Song : MonoBehaviour
 	IEnumerator NoteDelay()
 	{
 		//a = 0;
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.714f);
 	}
 	// Update is called once per frame
 	void SongStart () 
 	{
-		StartCoroutine(NoteDelay());
+		//StartCoroutine(NoteDelay());
 		Instantiate(RedNote, new Vector3 (8.0f, -2.0f, 0), Quaternion.identity);
-		StartCoroutine(NoteDelay());
+		//StartCoroutine(NoteDelay());
 		
 		
 		part += 1;
