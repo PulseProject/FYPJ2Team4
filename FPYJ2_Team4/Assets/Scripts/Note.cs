@@ -4,6 +4,7 @@ using System.Collections;
 //Script for the Red Note and only the Red Note!!
 
 public class Note : MonoBehaviour {
+	float speed = 2.333333333f;
 	// Use this for initialization
 	void Start () 
 	{
@@ -12,7 +13,7 @@ public class Note : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		transform.Translate(new Vector3(-5, 0, 0) * Time.deltaTime);
+		transform.Translate(new Vector3(-5, 0, 0) * Time.deltaTime * speed);
 		
 		
 		if (!GetComponent<Renderer> ().isVisible)
