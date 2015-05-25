@@ -17,7 +17,18 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+												GlobalSection(MonoDevelopProperties) = preSolution
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
 											GlobalSection(MonoDevelopProperties) = preSolution
+=======
+										GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> 21b9c01bb1d8195c5d4e4842ff6e566b24f6556e
+=======
+							GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of 281e27f... Done List:
+>>>>>>> cc95717e10644e8cc7ff7cdfe702cbb8cc2b0f9a
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
