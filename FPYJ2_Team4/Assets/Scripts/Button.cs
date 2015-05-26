@@ -12,6 +12,10 @@ public class Button : MonoBehaviour {
 	public int score;
 	public Text ScoreCounter;
 	public float myDistance;
+	public Collision2D col;
+
+	public GameObject note;
+
 	void Start () {
 		combo = 0;
 		ComboCounter.text = ""+combo;
@@ -21,30 +25,34 @@ public class Button : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("isTouching: " + isTouching());
+		//Debug.Log ("isTouching: " + isTouching());
 	}
 
 
-	bool isTouching()
+	void OnTriggerEnter2D(Collider2D coll)
 	{
-			RaycastHit2D hit = Physics2D.Raycast (transform.position, Vector2.up * myDistance);
-			Debug.DrawRay (transform.position, Vector2.up * myDistance);
-			if (Input.GetMouseButtonDown (0)) {
-			if (hit.collider != null) {
-				if (hit.collider.tag == "Note") {
-					++combo;
-					ComboCounter.text = ""+combo;
-					score += Random.Range(8,12);
-					ScoreCounter.text = "SCORE: "+score;
-					Destroy (hit.collider.gameObject);
-					return true;
-				}
-			}
-			else{
-				return false;
-			}
+		if (Input.GetMouseButtonDown (0)) {
+			if (coll.gameObject.tag == "Note") {
+				++combo;
+				ComboCounter.text = "" + combo;
+				score += Random.Range (8, 12);
+				ScoreCounter.text = "SCORE: " + score;
+				Destroy (coll.gameObject);
+			} 
 		}
-		return false;
+	}
+
+	void OnTriggerStay2D(Collider2D coll)
+	{
+		if (Input.GetMouseButtonDown (0)) {
+			if (coll.gameObject.tag == "Note") {
+				++combo;
+				ComboCounter.text = "" + combo;
+				score += Random.Range (8, 12);
+				ScoreCounter.text = "SCORE: " + score;
+				Destroy (coll.gameObject);
+			} 
+		}
 	}
 //	void OnCollisionStay2D(Collision2D col)
 //	{

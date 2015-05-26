@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Button.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\Note.cs" />
      <Compile Include="Assets\Scripts\Play_Song.cs" />
  <Reference Include="UnityEngine.UI">

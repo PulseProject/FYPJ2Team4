@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.UI;
 public class Play_Song : MonoBehaviour 
 {
 	public GameObject RedNote;
 	public GameObject Blue;
 	public GameObject Yellow;
 	public GameObject Green;
-
-
 	public int part = 0;
 	// Use this for initialization
 	void Start () 
 	{
-
 		InvokeRepeating ("SongStart", 1, 0.857f);
 		//if (part <= 1) {
 		//SongStart ();
@@ -35,7 +32,7 @@ public class Play_Song : MonoBehaviour
 	{
 		//StartCoroutine(NoteDelay());
 		Instantiate(RedNote, new Vector3 (8.0f, -2.0f, 0), Quaternion.identity);
-		//StartCoroutine(NoteDelay());
+		StartCoroutine(NoteDelay());
 		
 		
 		part += 1;
